@@ -9,8 +9,8 @@ test('middlewware', function (t) {
     mapDestination(operation, name) {
       return name;
     },
-    callDestination(upstream, document) {
-      return { data: { [upstream]: `${upstream}.processed` } };
+    callDestination(destination, document) {
+      return { data: { [destination]: `${destination}.processed` } };
     }
   });
   

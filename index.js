@@ -1,7 +1,7 @@
 'use strict';
 
 const gql = require('graphql-tag');
-const { splitDocumentByUpstream } = require('./lib/graphql-utils');
+const { splitDocumentByDestination } = require('./lib/graphql-utils');
 
 function graphqlRouter({
   // function (operation: String, attribute: String): String
@@ -16,10 +16,10 @@ function graphqlRouter({
     
     const document = gql(req.body);
     
-    const upstreamDocuments = splitDocumentByUpstream(mapDestination, document);
+    const documents = splitDocumentByDestination(mapDestination, document);
     
-    const work = Object.entries(upstreamDocuments).map(([upstream, document]) => {
-      return callDestination(upstream, document);
+    const work = Object.entries(documents).map(([destination, document]) => {
+      return callDestination(destination, document);
     });
 
     Promise.all(work).then((results) => {
