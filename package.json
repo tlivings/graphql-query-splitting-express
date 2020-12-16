@@ -1,0 +1,22 @@
+{
+  "name": "graphql-router-express",
+  "version": "1.0.0",
+  "description": "Split a graphql document into multiple documents",
+  "main": "index.js",
+  "scripts": {
+    "test": "tape test/*.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "peerDependencies": {
+    "graphql": "^14.0.0"
+  },
+  "devDependencies": {
+    "express": "^4.17.1",
+    "graphql": "^14.0.0",
+    "tape": "^5.0.1"
+  },
+  "dependencies": {
+    "graphql-tag": "^2.11.0"
+  }
+}
