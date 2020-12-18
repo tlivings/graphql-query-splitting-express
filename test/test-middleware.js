@@ -15,7 +15,7 @@ test('middlewware', function (t) {
   });
   
   const req = {
-    body: 'query { foo, bar }'
+    body: { query: 'query { foo, bar }' }
   }
   
   middleware(req, undefined, (error) => {

@@ -12,9 +12,8 @@ function graphqlRouter({
   callDestination 
 }) {
   
-  return function (req, res, next) {
-    
-    const document = gql(req.body);
+  return function (req, res, next) {    
+    const document = gql(req.body.query);
     
     const documents = splitDocumentByDestination(mapDestination, document);
     
